@@ -16,10 +16,10 @@ mkdir -p "$csv_files"
 url="https://raw.githubusercontent.com/jdbarillas/parchposey/master/data-raw"
 files=("accounts.csv" "orders.csv" "region.csv" "sales_reps.csv" "web_events.csv")
 
-# for f in "${files[@]}"; do
-#     curl -s -o "$csv_files/$f" "$url/$f"
-#     echo "Downloaded: $f"
-# done
+for f in "${files[@]}"; do
+    curl -s -o "$csv_files/$f" "$url/$f"
+    echo "Downloaded: $f"
+done
 
 echo "Starting load into database: $DB_NAME"
 
